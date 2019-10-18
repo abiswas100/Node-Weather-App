@@ -8,6 +8,7 @@ const forecast = require('./utils/forecast');
 // console.log(path.join(__dirname,'../public')); we did it to connect the public and src 
 
 const app = express()
+const port = process.env.PORT   || 3000  // fallback for our localhost
 
 //Defining Paths for Express Config
 const publicDirectory = path.join(__dirname,'../public')
@@ -110,7 +111,7 @@ app.get('*',(req,res)=>{              //wildcard (*) -  this character means any
 
 
 // Setting up the server
-app.listen(3000,()=>{
-    console.log('server is Up on port 3000')
-})  // common development port 
+app.listen(port,()=>{
+    console.log('server is Up on port '+port)
+})  // common development port is 3000
 
